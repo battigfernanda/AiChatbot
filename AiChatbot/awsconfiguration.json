@@ -1,0 +1,12 @@
+{
+    "UserAgent": "aws-sdk-ios/2.0",
+    "Version": "2.0",
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-east-2_lLidl0gbS",
+            "AppClientId": "563m7j2av4ko8cpdj58qg2l9g7",
+            "Region": "us-east-2"
+        }
+    }
+}
+
