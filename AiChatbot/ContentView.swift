@@ -28,15 +28,22 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             if authManager.isAuthenticated {
-                ChatView(userFullName: authManager.userFullName)
+                ChatView(userFullName: authManager.getUserFullName())
                     .navigationBarBackButtonHidden(true)
             } else {
                 LoginView(showChat: $showChat)
             }
         }
         .onAppear {
-            authManager.initializeAWSAuth()
+            authManager.initializeAWSAuth { success in
+                if !success {
+                    print("AWSMobileClient failed to initialize.")
+                } else {
+                    print("AWSMobileClient initialized successfully.")
+                }
+            }
         }
+
     }
 }
 
